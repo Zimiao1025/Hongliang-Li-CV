@@ -40,6 +40,7 @@
 \newcommand{\CVEmail}{leon\_02@aliyun.com}
 % Replace the search URL below with your public Google Scholar profile URL.
 \newcommand{\CVScholarURL}{https://scholar.google.com/scholar?q=Hongliang+Li+BioSeq-Diabolo}
+\newcommand{\CVCitations}{404}
 
 % Add URLs here when OriBench pages are public.
 \newcommand{\OriBenchPlatformURL}{https://oribench.lglab.ac.cn/}
@@ -128,14 +129,20 @@ AI4science researcher specializing in biological foundation models and drug disc
   \item Advanced protein conformation generation, structural validation, and model ranking. The resulting system achieved top-ranking performance in the continuous automated model evaluation (CAMEO) benchmark.
 \end{detailitems}
 
-\newpage
-\section{Selected Projects (continued)}
 \project{OriDyn — All-Modality Conformational Ensemble Generation}{In Development}
 \begin{detailitems}
   \item Developing an AlphaFold~3-based framework for generating conformational ensembles across biomolecular modalities, including proteins, protein--ligand complexes, antibodies, peptides, and other molecular assemblies.
   \item Designed ensemble sampling, structural filtering, and confidence-based ranking strategies to move beyond single-structure prediction and recover diverse, biologically relevant conformational states.
   \item On current internal benchmarks, OriDyn substantially outperforms published conformational-ensemble baselines, including BioEmu, across the evaluation settings used; broader external validation is ongoing.
   \item Enables dynamics-aware analysis for binding-site discovery, affinity modeling, molecular design, and downstream drug-discovery workflows.
+\end{detailitems}
+
+\project{ScoreBench — All-Modality Affinity Prediction Benchmark}{Benchmark \& Evaluation}
+\begin{detailitems}
+  \item Constructed a comprehensive affinity-prediction benchmark for all-modality drug systems, spanning small molecules, antibodies, peptides, and other therapeutic modalities.
+  \item Organized the benchmark around three practical task families: \textbf{binding} assessment, affinity \textbf{optimization}, and mutation-effect prediction, with standardized data, evaluation protocols, and metrics for consistent comparison.
+  \item Conducted broad evaluations of frontier large language models, including \textbf{Claude, GPT, Kimi, and DeepSeek}, to characterize their capabilities across drug modalities and affinity-related tasks.
+  \item Performed task- and modality-level error analysis to identify recurring LLM failure modes, robustness gaps, and limitations in molecular reasoning and quantitative affinity prediction.
 \end{detailitems}
 
 \project{OriBench — OriGene AI Workbench}{\optionalhref{\OriBenchPlatformURL}{Platform}\enspace |\enspace \optionalhref{\OriBenchDocsURL}{Documentation}}
@@ -145,6 +152,10 @@ AI4science researcher specializing in biological foundation models and drug disc
 \end{detailitems}
 
 \section{Publications}
+\vspace{-0.28em}
+\begin{flushright}
+  \vspace{-1.25em}\textit{Total citations: \textbf{\CVCitations}}\vspace{-0.20em}
+\end{flushright}
 {\bfseries\itshape Submitted / Under Review}
 \publication{\textbf{Hongliang Li} et al. (2026). ``OriScore: Unified Affinity Scoring Framework for All Drug Modalities.'' \textit{Nature} (under review).\\[-0.1em]
 \textit{A unified affinity-scoring framework spanning small molecules, antibodies, and peptides, with multi-target binding prediction capabilities. \textbf{Advised by Prof. Bowen Zhou.}}}
