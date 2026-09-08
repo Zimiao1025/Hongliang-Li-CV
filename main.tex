@@ -1,0 +1,148 @@
+% !TeX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,top=0.48in,bottom=0.48in,left=0.55in,right=0.55in]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+
+% File names make the font portable across Overleaf, TeX Live, and Tectonic.
+\setmainfont{texgyrepagella-regular.otf}[
+  BoldFont=texgyrepagella-bold.otf,
+  ItalicFont=texgyrepagella-italic.otf,
+  BoldItalicFont=texgyrepagella-bolditalic.otf
+]
+\definecolor{linkcolor}{HTML}{1A4F8B}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor,
+  pdftitle={Hongliang Li — Curriculum Vitae},
+  pdfauthor={Hongliang Li}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\emergencystretch}{1em}
+\urlstyle{same}
+
+% ---------- Frequently edited details ----------
+\newcommand{\CVName}{Hongliang Li}
+\newcommand{\CVPhone}{+86 188 1160 3683}
+\newcommand{\CVEmail}{leon\_02@aliyun.com}
+% Replace the search URL below with your public Google Scholar profile URL.
+\newcommand{\CVScholarURL}{https://scholar.google.com/scholar?q=Hongliang+Li+BioSeq-Diabolo}
+
+% Add URLs here when OriBench pages are public.
+\newcommand{\OriBenchPlatformURL}{}
+\newcommand{\OriBenchDocsURL}{}
+
+% ---------- Layout helpers ----------
+\titleformat{\section}
+  {\large\bfseries\scshape}
+  {}{0pt}{}
+  [\vspace{-0.45em}\rule{\textwidth}{0.45pt}]
+\titlespacing*{\section}{0pt}{0.62em}{0.28em}
+
+\newcommand{\entry}[4]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+    \textbullet\enspace\textbf{#1} & \textit{#2} \\
+    \hspace{1.05em}\textit{#3} & #4
+  \end{tabularx}\par\vspace{0.04em}
+}
+
+\newenvironment{detailitems}{%
+  \begin{itemize}[leftmargin=2.15em,label=$\circ$,itemsep=0.08em,topsep=0.10em,parsep=0pt,partopsep=0pt]
+}{\end{itemize}}
+
+\newcommand{\project}[2]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+    \textbullet\enspace\textbf{#1} & #2
+  \end{tabularx}\par\vspace{0.02em}
+}
+
+\newcommand{\publication}[1]{%
+  \begin{itemize}[leftmargin=1.18em,label=\textbullet,itemsep=0.20em,topsep=0.08em,parsep=0pt,partopsep=0pt]
+    \item #1
+  \end{itemize}
+}
+
+\newcommand{\optionalhref}[2]{%
+  \ifdefempty{#1}{#2}{\href{#1}{#2}}%
+}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{24.8}{27}\selectfont\bfseries \CVName}\par
+  \vspace{0.20em}
+  \CVPhone\enspace |\enspace
+  \href{mailto:leon_02@aliyun.com}{\CVEmail}\enspace |\enspace
+  \href{\CVScholarURL}{Google Scholar}
+\end{center}
+\vspace{-0.55em}
+
+\section{Profile}
+\justifying
+AI4science researcher specializing in biological foundation models and drug discovery. Experienced in building unified biology foundation models (protein design, dynamic modeling, affinity prediction) and drug discovery workbenches integrating knowledge across disciplines and continuously supporting analysis, design, validation, and decision-making throughout the drug discovery process.
+
+\section{Education}
+\entry{Fudan University — Research Institute of Intelligent Complex Systems}{Starting Aug 2026}{Ph.D. Student | Biology Foundation Models \& AI-Driven Drug Discovery}{Shanghai, China}
+\begin{detailitems}
+  \item Advisors: Prof. Shuangjia Zheng and Prof. Siqi Sun
+\end{detailitems}
+
+\entry{Beijing Institute of Technology}{Sep 2020 -- Jun 2023}{M.S. in Computer Science | NLP \& Biological Language Models}{Beijing, China}
+\begin{detailitems}
+  \item Advisor: Prof. Bin Liu
+\end{detailitems}
+
+\entry{Beijing Institute of Technology}{Sep 2016 -- Jun 2020}{B.S. in Mechatronic Engineering}{Beijing, China}
+
+\section{Professional Experience}
+\entry{AI Department, Lingang Laboratory}{Jul 2025 -- Jul 2026}{Research Engineer}{Shanghai, China}
+\begin{detailitems}
+  \item Developed and optimized unified affinity-scoring models spanning small molecules, antibodies, and peptides, with multi-target binding prediction capabilities.
+  \item Built an AI-enabled drug-design workbench for structure--function studies and end-to-end candidate profiling; implemented agent-based provenance tracking to improve reproducibility and computational validation across multi-step workflows.
+\end{detailitems}
+
+\entry{Institute of AI Industry Research, Tsinghua University}{Sep 2023 -- Apr 2025}{Research Assistant, ATOM Lab}{Beijing, China}
+\begin{detailitems}
+  \item Contributed to a Ministry of Science and Technology initiative on deep-learning-based end-to-end protein structure prediction. Advanced neural-network methods for protein conformation generation and structural validation.
+\end{detailitems}
+
+\section{Selected Projects}
+\project{OriBench — OriGene AI Workbench}{\optionalhref{\OriBenchPlatformURL}{Platform}\enspace |\enspace \optionalhref{\OriBenchDocsURL}{Documentation}}
+\begin{detailitems}
+  \item AI-powered scientific workbench integrating machine-learning models, molecular modeling tools, and multi-omics data to support rational drug design and hit-to-lead optimization.
+\end{detailitems}
+
+\project{AIRFold}{\href{https://atomlab.yanyanlan.com/project/airfold/}{Homepage}\enspace |\enspace \href{https://github.com/THU-ATOM/AIRFold}{GitHub}}
+\begin{detailitems}
+  \item Protein structure prediction system that achieved top-ranking performance in CAMEO.
+\end{detailitems}
+
+\section{Publications}
+{\bfseries\itshape Submitted / Under Review}
+\publication{\textbf{Hongliang Li} et al. (2026). ``OriScore: Unified Affinity Scoring Framework for All Drug Modalities.'' \textit{Nature} (under review).}
+
+{\bfseries\itshape Peer-Reviewed}
+\publication{\textbf{Hongliang Li} and Bin Liu. (2023). ``BioSeq-Diabolo: Biological Sequence Similarity Analysis Using Diabolo Embeddings.'' \textit{PLOS Computational Biology}, 19(6), e1011214. \href{https://doi.org/10.1371/journal.pcbi.1011214}{[DOI]}}
+
+\publication{\textbf{Hongliang Li}, Yihe Pang, and Bin Liu. (2022). ``BioSeq-BLM: A Comprehensive Platform for Analyzing DNA, RNA, and Protein Sequences Based on Biological Language Models.'' \textit{Nucleic Acids Research}, 49(22), e129. \href{https://doi.org/10.1093/nar/gkab1114}{[DOI]}}
+
+\publication{Qilong Wang, Huikun Zeng, Yan Zhu, et al. (2021). ``Dual UMIs and Dual Barcodes With Minimal PCR Amplification Removes Artifacts and Acquires Accurate Antibody Repertoires.'' \textit{Frontiers in Immunology}, 12, 778298. \href{https://doi.org/10.3389/fimmu.2021.778298}{[DOI]}}
+
+\publication{\textbf{Hongliang Li}, Hongyu Wang, Dongping Chen, and Zhengshe Kang. (2020). ``Revealing the Optical Properties of Polycyclic Aromatic Hydrocarbon Clusters with Surface Formyl Groups.'' \textit{Proceedings of the Combustion Institute}, 38(1), 1207--1215.}
+
+\publication{\textbf{Hongliang Li}, Zhengshe Kang, and Dongping Chen. (2019). ``HOMO--LUMO Gaps of Polycyclic Aromatic Hydrocarbon Clusters with Formyl Groups.'' \textit{12th Asia-Pacific Conference on Combustion (ASPACC 2019)}.}
+
+\end{document}
