@@ -1,7 +1,7 @@
 % !TeX program = xelatex
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[a4paper,top=0.48in,bottom=0.48in,left=0.55in,right=0.55in]{geometry}
+\usepackage[a4paper,top=0.60in,bottom=0.60in,left=0.62in,right=0.62in]{geometry}
 \usepackage{fontspec}
 \usepackage{microtype}
 \usepackage{etoolbox}
@@ -47,30 +47,30 @@
 
 % ---------- Layout helpers ----------
 \titleformat{\section}
-  {\large\bfseries\scshape}
+  {\fontsize{11.7}{13.2}\selectfont\bfseries\scshape}
   {}{0pt}{}
   [\vspace{-0.45em}\rule{\textwidth}{0.45pt}]
-\titlespacing*{\section}{0pt}{0.62em}{0.28em}
+\titlespacing*{\section}{0pt}{0.86em}{0.38em}
 
 \newcommand{\entry}[4]{%
   \noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
     \textbullet\enspace\textbf{#1} & \textit{#2} \\
     \hspace{1.05em}\textit{#3} & #4
-  \end{tabularx}\par\vspace{0.04em}
+  \end{tabularx}\par\vspace{0.12em}
 }
 
 \newenvironment{detailitems}{%
-  \begin{itemize}[leftmargin=2.15em,label=$\circ$,itemsep=0.08em,topsep=0.10em,parsep=0pt,partopsep=0pt]
+  \begin{itemize}[leftmargin=2.15em,label=$\circ$,itemsep=0.20em,topsep=0.16em,parsep=0pt,partopsep=0pt]
 }{\end{itemize}}
 
 \newcommand{\project}[2]{%
   \noindent\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
     \textbullet\enspace\textbf{#1} & #2
-  \end{tabularx}\par\vspace{0.02em}
+  \end{tabularx}\par\vspace{0.08em}
 }
 
 \newcommand{\publication}[1]{%
-  \begin{itemize}[leftmargin=1.18em,label=\textbullet,itemsep=0.20em,topsep=0.08em,parsep=0pt,partopsep=0pt]
+  \begin{itemize}[leftmargin=1.18em,label=\textbullet,itemsep=0.32em,topsep=0.14em,parsep=0pt,partopsep=0pt]
     \item #1
   \end{itemize}
 }
@@ -80,15 +80,16 @@
 }
 
 \begin{document}
+\fontsize{10.3}{12.7}\selectfont
 
 \begin{center}
-  {\fontsize{24.8}{27}\selectfont\bfseries \CVName}\par
-  \vspace{0.20em}
+  {\fontsize{25.5}{28}\selectfont\bfseries \CVName}\par
+  \vspace{0.26em}
   \CVPhone\enspace |\enspace
   \href{mailto:leon_02@aliyun.com}{\CVEmail}\enspace |\enspace
   \href{\CVScholarURL}{Google Scholar}
 \end{center}
-\vspace{-0.55em}
+\vspace{-0.35em}
 
 \section{Profile}
 \justifying
@@ -120,19 +121,33 @@ AI4science researcher specializing in biological foundation models and drug disc
 \end{detailitems}
 
 \section{Selected Projects}
-\project{OriBench — OriGene AI Workbench}{\optionalhref{\OriBenchPlatformURL}{Platform}\enspace |\enspace \optionalhref{\OriBenchDocsURL}{Documentation}}
+\project{AIRFold — Systematic Protein Structure Prediction}{\href{https://atomlab.yanyanlan.com/project/airfold/}{Homepage}\enspace |\enspace \href{https://github.com/THU-ATOM/AIRFold}{GitHub}}
 \begin{detailitems}
-  \item AI-powered scientific workbench integrating machine-learning models, molecular modeling tools, and multi-omics data to support rational drug design and hit-to-lead optimization.
+  \item Developed at the \textbf{Institute for AI Industry Research (AIR), Tsinghua University}, within the ATOM Lab led by \textbf{Prof. Yanyan Lan}; contributed to the National Key R\&D initiative on deep-learning-based end-to-end protein structure prediction.
+  \item Helped build a scalable, systematic prediction platform combining homology mining and MSA generation with AlphaFold2, RoseTTAFold2, OmegaFold, ESMFold, and model-quality estimation in a modular microservice architecture.
+  \item Advanced protein conformation generation, structural validation, and model ranking. The resulting system achieved top-ranking performance in the continuous automated model evaluation (CAMEO) benchmark.
 \end{detailitems}
 
-\project{AIRFold}{\href{https://atomlab.yanyanlan.com/project/airfold/}{Homepage}\enspace |\enspace \href{https://github.com/THU-ATOM/AIRFold}{GitHub}}
+\newpage
+\section{Selected Projects (continued)}
+\project{OriDyn — All-Modality Conformational Ensemble Generation}{In Development}
 \begin{detailitems}
-  \item Protein structure prediction system that achieved top-ranking performance in CAMEO.
+  \item Developing an AlphaFold~3-based framework for generating conformational ensembles across biomolecular modalities, including proteins, protein--ligand complexes, antibodies, peptides, and other molecular assemblies.
+  \item Designed ensemble sampling, structural filtering, and confidence-based ranking strategies to move beyond single-structure prediction and recover diverse, biologically relevant conformational states.
+  \item On current internal benchmarks, OriDyn substantially outperforms published conformational-ensemble baselines, including BioEmu, across the evaluation settings used; broader external validation is ongoing.
+  \item Enables dynamics-aware analysis for binding-site discovery, affinity modeling, molecular design, and downstream drug-discovery workflows.
+\end{detailitems}
+
+\project{OriBench — OriGene AI Workbench}{\optionalhref{\OriBenchPlatformURL}{Platform}\enspace |\enspace \optionalhref{\OriBenchDocsURL}{Documentation}}
+\begin{detailitems}
+  \item Built an AI-powered scientific workbench integrating machine-learning models, molecular modeling tools, and multi-omics data for rational drug design and hit-to-lead optimization.
+  \item Connected analysis, design, validation, and decision-making in reproducible multi-step workflows, with agent-based provenance tracking for computational results and design rationale.
 \end{detailitems}
 
 \section{Publications}
 {\bfseries\itshape Submitted / Under Review}
-\publication{\textbf{Hongliang Li} et al. (2026). ``OriScore: Unified Affinity Scoring Framework for All Drug Modalities.'' \textit{Nature} (under review).}
+\publication{\textbf{Hongliang Li} et al. (2026). ``OriScore: Unified Affinity Scoring Framework for All Drug Modalities.'' \textit{Nature} (under review).\\[-0.1em]
+\textit{A unified affinity-scoring framework spanning small molecules, antibodies, and peptides, with multi-target binding prediction capabilities. \textbf{Advised by Prof. Bowen Zhou.}}}
 
 {\bfseries\itshape Peer-Reviewed}
 \publication{\textbf{Hongliang Li} and Bin Liu. (2023). ``BioSeq-Diabolo: Biological Sequence Similarity Analysis Using Diabolo Embeddings.'' \textit{PLOS Computational Biology}, 19(6), e1011214. \href{https://doi.org/10.1371/journal.pcbi.1011214}{[DOI]}}
@@ -144,5 +159,12 @@ AI4science researcher specializing in biological foundation models and drug disc
 \publication{\textbf{Hongliang Li}, Hongyu Wang, Dongping Chen, and Zhengshe Kang. (2020). ``Revealing the Optical Properties of Polycyclic Aromatic Hydrocarbon Clusters with Surface Formyl Groups.'' \textit{Proceedings of the Combustion Institute}, 38(1), 1207--1215.}
 
 \publication{\textbf{Hongliang Li}, Zhengshe Kang, and Dongping Chen. (2019). ``HOMO--LUMO Gaps of Polycyclic Aromatic Hydrocarbon Clusters with Formyl Groups.'' \textit{12th Asia-Pacific Conference on Combustion (ASPACC 2019)}.}
+
+\section{Research Expertise}
+\begin{itemize}[leftmargin=1.18em,label=\textbullet,itemsep=0.24em,topsep=0.12em,parsep=0pt,partopsep=0pt]
+  \item \textbf{Biological Foundation Models:} multimodal biomolecular representation learning, protein structure and conformational-ensemble generation, and structure--function modeling.
+  \item \textbf{AI-Driven Drug Discovery:} unified affinity prediction across drug modalities, molecular design, hit-to-lead optimization, and multi-target modeling.
+  \item \textbf{Scientific AI Systems:} scalable model orchestration, agent-based scientific workflows, provenance tracking, computational validation, and reproducible decision support.
+\end{itemize}
 
 \end{document}
